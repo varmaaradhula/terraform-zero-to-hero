@@ -62,6 +62,10 @@ To run the vault server in background
 
 nohup vault server -dev -dev-listen-address="0.0.0.0:8200" > vault.log 2>&1 &
 
+To check the logs:
+
+tail -f vault.log
+
 ## Configure Terraform to read the secret from Vault.
 
 Detailed steps to enable and configure AppRole authentication in HashiCorp Vault:
