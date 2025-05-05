@@ -50,13 +50,37 @@ sudo apt update
 ```
 sudo apt install vault
 ```
+vault.hcl file
+.......
+storage "file" {
+  path = "/opt/vault/data"
+}
+
+listener "tcp" {
+  address     = "0.0.0.0:8200"
+  tls_disable = 1
+}
+
+ui = true
+
+api_addr = "http://3.10.119.201:8200"
+cluster_addr = "http://3.10.119.201:8201"
+.............
 
 ## Start Vault.
 
-To start Vault, you can use the following command:
+To start Vault in dev mode, you can use the following command:
 
 ```
 vault server -dev -dev-listen-address="0.0.0.0:8200"
+```
+
+To start Vault in prod mode, you can use the following command:
+
+```
+vault server -config=/etc/vault.d/vault.hcl
+
+nohup vault server -config=/etc/vault.d/vault.hcl > vault.log 2>&1 &
 ```
 To run the vault server in background
 
