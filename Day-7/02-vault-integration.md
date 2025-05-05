@@ -51,7 +51,8 @@ sudo apt update
 sudo apt install vault
 ```
 vault.hcl file
-.......
+...
+
 storage "file" {
   path = "/opt/vault/data"
 }
@@ -65,7 +66,8 @@ ui = true
 
 api_addr = "http://3.10.119.201:8200"
 cluster_addr = "http://3.10.119.201:8201"
-.............
+
+...
 
 ## Start Vault.
 
