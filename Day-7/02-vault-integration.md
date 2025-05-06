@@ -172,6 +172,13 @@ After creating the AppRole, you need to generate a Role ID and Secret ID pair. T
 
 **a. Generate Role ID**:
 
+vault list auth/approle/role
+
+vault auth list
+
+vault auth enable approle
+
+
 You can retrieve the Role ID using the Vault CLI:
 
 ```bash
