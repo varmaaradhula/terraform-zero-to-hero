@@ -82,7 +82,14 @@ To start Vault in prod mode, you can use the following command:
 ```
 vault server -config=/etc/vault.d/vault.hcl
 
-nohup vault server -config=/etc/vault.d/vault.hcl > vault.log 2>&1 &
+sudo nohup vault server -config=/etc/vault.d/vault.hcl > ~/vault.log 2>&1 &
+
+tail -f ~/vault.log
+
+export VAULT_ADDR=http://127.0.0.1:8200
+
+vault operator init
+
 ```
 To run the vault server in background
 
