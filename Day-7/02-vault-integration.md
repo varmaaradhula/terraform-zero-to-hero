@@ -87,9 +87,11 @@ tail -f ~/vault.log
 sudo lsof -i :8200
 
 
-export VAULT_ADDR=http://127.0.0.1:8200
+export VAULT_ADDR=http://<public IP>:8200
 
 vault operator init
+
+vault operator unseal
 
 ```
 To run the vault server in background
