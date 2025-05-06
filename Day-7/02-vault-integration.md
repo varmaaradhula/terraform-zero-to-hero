@@ -189,3 +189,16 @@ vault write -f auth/approle/role/terraform/secret-id
    ```
 
 This command generates a Secret ID and provides it in the response. Save the Secret ID securely, as it will be used for Terraform authentication.
+
+**Terraform Integration to get data**
+
+***
+
+data "vault_kv_secret_v2" "userdata" {
+  mount = "mysecrets" // change it according to your mount
+  name  = "userdetails" // change it according to your secret
+}
+
+ Name        = data.vault_kv_secret_v2.userdata.data["username"]
+
+***
