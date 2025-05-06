@@ -86,6 +86,9 @@ sudo nohup vault server -config=/etc/vault.d/vault.hcl > ~/vault.log 2>&1 &
 
 tail -f ~/vault.log
 
+sudo lsof -i :8200
+
+
 export VAULT_ADDR=http://127.0.0.1:8200
 
 vault operator init
