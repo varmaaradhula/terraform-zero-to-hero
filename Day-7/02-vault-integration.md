@@ -206,6 +206,9 @@ This command generates a Secret ID and provides it in the response. Save the Sec
 ```bash
 vault secrets enable -path=secret/tagnames kv
 vault kv put secret/tagnames/tags ubuntu="Assign-Ubuntu" amazon="Assign-RedHat"
+
+vault kv get secret/tagnames/tags
+```
 **Terraform Integration to get data**
 ```
 ***
