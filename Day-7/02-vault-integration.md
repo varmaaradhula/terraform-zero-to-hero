@@ -91,7 +91,11 @@ export VAULT_ADDR=http://<public IP>:8200
 
 vault operator init
 
-vault operator unseal
+vault operator unseal  <Enter all 3 unseal keys one by one for each command)
+
+vault login < Need to enter intial token>
+
+vault auth enable approle < need to enable app role before creating role>
 
 ```
 To run the vault server in background
