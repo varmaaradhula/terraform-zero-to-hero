@@ -201,8 +201,13 @@ vault write -f auth/approle/role/terraform/secret-id
 
 This command generates a Secret ID and provides it in the response. Save the Secret ID securely, as it will be used for Terraform authentication.
 
-**Terraform Integration to get data**
+**Create secret data**
 
+```bash
+vault secrets enable -path=secret/tagnames kv
+vault kv put secret/tagnames/tags ubuntu="Assign-Ubuntu" amazon="Assign-RedHat"
+**Terraform Integration to get data**
+```
 ***
 
 data "vault_kv_secret_v2" "userdata" {
